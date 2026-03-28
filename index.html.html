@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PESTEL Foundation Trust – A voluntary, not-for-profit organization committed to delivering public services and advancing the cause of common people across India." />
+  <title>PESTEL Foundation Trust | Empowering Society Through Inclusive Development</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── CSS VARIABLES ─────────────────────────────────── */
+    :root {
+      --saffron:   #FF9933;
+      --saffron-light: #FFB866;
+      --saffron-dark: #E6891F;
+      --green:     #138808;
+      --green-light: #1aaa0a;
+      --navy:      #000080;
+      --navy-light:#0000B8;
+      --white:     #FFFFFF;
+      --off-white: #F8F8F4;
+      --light-bg:  #F2F4F8;
+      --text-dark: #1a1a2e;
+      --text-mid:  #3a3a5c;
+      --text-light:#6b7280;
+      --border:    #e2e4ea;
+      --shadow-sm: 0 2px 8px rgba(0,0,128,0.08);
+      --shadow-md: 0 8px 28px rgba(0,0,128,0.12);
+      --shadow-lg: 0 20px 60px rgba(0,0,128,0.16);
+      --radius:    12px;
+      --radius-lg: 20px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ─── RESET ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ─── UTILITY ───────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 80px 0; }
+    .section-pad-sm { padding: 60px 0; }
+    .text-center { text-align: center; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+    .divider {
+      width: 60px; height: 4px;
+      background: linear-gradient(90deg, var(--saffron), var(--green));
+      border-radius: 2px;
+      margin: 16px 0 24px;
+    }
+    .divider-center { margin: 16px auto 24px; }
+
+    /* ─── BUTTONS ───────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 0.92rem; font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .btn::after {
+      content: ''; position: absolute;
+      inset: 0; background: rgba(255,255,255,0.15);
+      opacity: 0; transition: var(--transition);
+    }
+    .btn:hover::after { opacity: 1; }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary { background: linear-gradient(135deg, var(--saffron), var(--saffron-dark)); color: var(--white); }
+    .btn-green { background: linear-gradient(135deg, var(--green), #0d6b06); color: var(--white); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-outline { border: 2px solid var(--white); color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .btn-outline-navy { border: 2px solid var(--navy); color: var(--navy); }
+    .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+
+    /* ─── LANGUAGE TOGGLE (top bar) ─────────────────────── */
+    .top-bar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.78rem;
+      padding: 8px 0;
+    }
+    .top-bar .container {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 8px;
+    }
+    .top-bar a { color: rgba(255,255,255,0.85); transition: color .2s; }
+    .top-bar a:hover { color: var(--saffron); }
+    .lang-toggle {
+      display: flex; gap: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 30px; padding: 3px;
+    }
+    .lang-btn {
+      padding: 4px 14px; border-radius: 30px;
+      font-size: 0.75rem; font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      transition: var(--transition);
+    }
+    .lang-btn.active {
+      background: var(--saffron); color: var(--white);
+    }
+    .lang-btn:hover:not(.active) { color: var(--white); }
+
+    /* ─── NAVIGATION ────────────────────────────────────── */
+    .navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .navbar.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 14px 0; gap: 20px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; }
+    .nav-logo { width: 48px; height: 48px; flex-shrink: 0; }
+    .nav-brand-text { display: flex; flex-direction: column; }
+    .nav-brand-name {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--navy); line-height: 1.1;
+      letter-spacing: -0.3px;
+    }
+    .nav-brand-name span { color: var(--saffron); }
+    .nav-brand-sub {
+      font-size: 0.65rem; font-weight: 500;
+      color: var(--text-light); letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-link {
+      padding: 8px 14px; border-radius: 8px;
+      font-size: 0.87rem; font-weight: 500;
+      color: var(--text-mid);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--navy); background: var(--light-bg); }
+    .nav-cta { margin-left: 8px; }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none; flex-direction: column;
+      gap: 5px; padding: 8px;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+    .hamburger:hover { background: var(--light-bg); }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #000060 0%, #000080 40%, #00008f 70%, #0a0090 100%);
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255,153,51,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(19,136,8,0.12) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(255,153,51,0.08) 0%, transparent 35%);
+      animation: heroBgPulse 8s ease-in-out infinite alternate;
+    }
+    @keyframes heroBgPulse {
+      from { opacity: 0.8; }
+      to   { opacity: 1; }
+    }
+    .hero-chakra-bg {
+      position: absolute; right: -60px; top: 50%;
+      transform: translateY(-50%);
+      width: min(600px, 70vw); height: min(600px, 70vw);
+      opacity: 0.06;
+      animation: rotateSlow 80s linear infinite;
+    }
+    @keyframes rotateSlow { to { transform: translateY(-50%) rotate(360deg); } }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 80px 0;
+      max-width: 720px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,153,51,0.18);
+      border: 1px solid rgba(255,153,51,0.3);
+      color: var(--saffron-light);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px 18px; border-radius: 30px;
+      margin-bottom: 28px;
+      animation: fadeInUp 0.6s ease both;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; background: var(--saffron);
+      border-radius: 50%; animation: blink 1.5s ease infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800; color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 8px;
+      animation: fadeInUp 0.7s 0.1s ease both;
+    }
+    .hero-title .highlight { color: var(--saffron); }
+    .hero-title .highlight-green { color: #4ade80; }
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 28px;
+      font-weight: 400;
+      animation: fadeInUp 0.7s 0.2s ease both;
+    }
+    .hero-desc {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      animation: fadeInUp 0.7s 0.3s ease both;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      margin-bottom: 56px;
+      animation: fadeInUp 0.7s 0.4s ease both;
+    }
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 32px;
+      animation: fadeInUp 0.7s 0.5s ease both;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 36px;
+    }
+    .hero-stat-item { text-align: left; }
+    .hero-stat-value {
+      font-size: 2.2rem; font-weight: 800;
+      color: var(--saffron); line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.78rem; color: rgba(255,255,255,0.6);
+      margin-top: 4px; text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero India flag bar */
+    .flag-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 5px; display: flex;
+    }
+    .flag-bar span:nth-child(1) { flex:1; background: var(--saffron); }
+    .flag-bar span:nth-child(2) { flex:1; background: var(--white); }
+    .flag-bar span:nth-child(3) { flex:1; background: var(--green); }
+
+    /* ─── ABOUT SECTION ─────────────────────────────────── */
+    .about { background: var(--off-white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-chakra-wrap {
+      width: 100%; max-width: 420px;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, rgba(0,0,128,0.05), rgba(255,153,51,0.08));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      animation: floatAnim 4s ease-in-out infinite;
+      margin: 0 auto;
+    }
+    @keyframes floatAnim {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .about-chakra-wrap svg { width: 72%; }
+    .about-badge-reg {
+      position: absolute; bottom: -10px; right: -10px;
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: 14px 18px;
+      display: flex; flex-direction: column; gap: 6px;
+      min-width: 180px;
+    }
+    .about-badge-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 600; color: var(--text-mid);
+    }
+    .about-badge-item .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-saffron { background: var(--saffron); }
+    .dot-green   { background: var(--green); }
+    .dot-navy    { background: var(--navy); }
+    .about-text {}
+    .about-regs {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 28px;
+    }
+    .about-reg-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--white); border-radius: var(--radius);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-sm);
+      border-left: 3px solid var(--saffron);
+      transition: var(--transition);
+    }
+    .about-reg-item:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+    .about-reg-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .about-reg-text { font-size: 0.85rem; font-weight: 600; color: var(--text-mid); }
+    .about-reg-sub { font-size: 0.75rem; color: var(--text-light); font-weight: 400; }
+
+    /* ─── MISSION VISION ────────────────────────────────── */
+    .mission-vision { background: var(--white); }
+    .mv-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px; margin-bottom: 56px;
+    }
+    .mv-card {
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      position: relative; overflow: hidden;
+    }
+    .mv-card-mission {
+      background: linear-gradient(135deg, var(--navy), #0000a0);
+      color: var(--white);
+    }
+    .mv-card-vision {
+      background: linear-gradient(135deg, #FF6B00, var(--saffron));
+      color: var(--white);
+    }
+    .mv-card-icon { font-size: 2.5rem; margin-bottom: 20px; }
+    .mv-card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; opacity: 0.9; letter-spacing: 1px; text-transform: uppercase; }
+    .mv-card-text { font-size: 0.95rem; line-height: 1.8; opacity: 0.9; }
+    .mv-card-bg-shape {
+      position: absolute; right: -30px; bottom: -30px;
+      width: 140px; height: 140px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .pestel-title {
+      font-size: 1.3rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 28px;
+    }
+    .pestel-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pestel-card {
+      background: var(--light-bg); border-radius: var(--radius);
+      padding: 20px; text-align: center;
+      border-top: 3px solid transparent;
+      transition: var(--transition);
+    }
+    .pestel-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .pestel-card:nth-child(1) { border-color: #dc2626; }
+    .pestel-card:nth-child(2) { border-color: #f59e0b; }
+    .pestel-card:nth-child(3) { border-color: #3b82f6; }
+    .pestel-card:nth-child(4) { border-color: #8b5cf6; }
+    .pestel-card:nth-child(5) { border-color: var(--green); }
+    .pestel-card:nth-child(6) { border-color: var(--navy); }
+    .pestel-letter {
+      font-size: 2rem; font-weight: 800; line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pestel-word { font-size: 0.8rem; font-weight: 600; color: var(--text-mid); }
+
+    /* ─── LEADERSHIP ────────────────────────────────────── */
+    .leadership { background: var(--light-bg); }
+    .leaders-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .leader-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .leader-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .leader-header {
+      padding: 32px 32px 24px;
+      background: linear-gradient(135deg, var(--navy), #0000a8);
+      color: var(--white);
+      display: flex; align-items: center; gap: 20px;
+    }
+    .leader-header-president { background: linear-gradient(135deg, var(--navy), #0000a8); }
+    .leader-header-ceo { background: linear-gradient(135deg, #1a1a4e, var(--navy)); }
+    .leader-photo {
+      width: 80px; height: 80px; border-radius: 50%;
+      border: 3px solid rgba(255,153,51,0.6);
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; flex-shrink: 0; overflow: hidden;
+    }
+    .leader-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .leader-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(255,153,51,0.3), rgba(255,153,51,0.1));
+      font-size: 2rem;
+    }
+    .leader-name { font-size: 1.1rem; font-weight: 700; }
+    .leader-role {
+      font-size: 0.75rem; color: var(--saffron);
+      font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-top: 3px;
+    }
+    .leader-body { padding: 28px 32px; }
+    .leader-quote {
+      font-size: 1.2rem; color: var(--saffron);
+      margin-bottom: 14px; line-height: 1;
+    }
+    .leader-message { font-size: 0.88rem; color: var(--text-mid); line-height: 1.85; }
+    .leader-sign {
+      margin-top: 20px; padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--text-light);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .leader-sign-name { font-weight: 700; color: var(--navy); }
+
+    /* ─── PROGRAMS ──────────────────────────────────────── */
+    .programs { background: var(--white); }
+    .programs-tabs {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 40px; justify-content: center;
+    }
+    .prog-tab {
+      padding: 9px 22px; border-radius: 30px;
+      font-size: 0.85rem; font-weight: 600;
+      border: 2px solid var(--border);
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .prog-tab.active, .prog-tab:hover {
+      background: var(--navy); color: var(--white); border-color: var(--navy);
+    }
+
+    .programs-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .prog-card {
+      background: var(--light-bg); border-radius: var(--radius);
+      padding: 24px 20px; text-align: center;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      cursor: default;
+    }
+    .prog-card:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .prog-card:hover .prog-icon { background: rgba(255,255,255,0.15); color: var(--saffron); }
+    .prog-card:hover .prog-name { color: var(--white); }
+    .prog-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--white); box-shadow: var(--shadow-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin: 0 auto 14px;
+      transition: var(--transition);
+    }
+    .prog-name { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); transition: var(--transition); }
+
+    .activities-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px; display: none;
+    }
+    .activity-card {
+      background: var(--light-bg); border-radius: var(--radius);
+      padding: 20px; display: flex; align-items: flex-start; gap: 14px;
+      border: 1px solid var(--border); transition: var(--transition);
+    }
+    .activity-card:hover { box-shadow: var(--shadow-md); transform: translateX(4px); }
+    .activity-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .activity-name { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
+    .activity-desc { font-size: 0.78rem; color: var(--text-light); margin-top: 3px; }
+
+    /* ─── GALLERY ───────────────────────────────────────── */
+    .gallery { background: var(--off-white); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: var(--radius); overflow: hidden;
+      background: var(--light-bg);
+      aspect-ratio: 4/3;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      border: 2px dashed var(--border);
+      transition: var(--transition);
+      position: relative;
+    }
+    .gallery-item:hover { border-color: var(--saffron); }
+    .gallery-item:first-child {
+      grid-column: span 2; grid-row: span 2;
+      aspect-ratio: unset;
+    }
+    .gallery-placeholder-icon { font-size: 2.5rem; color: var(--text-light); margin-bottom: 8px; }
+    .gallery-placeholder-text { font-size: 0.8rem; color: var(--text-light); font-weight: 500; }
+    .gallery-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--saffron); color: var(--white);
+      font-size: 0.65rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 20px; letter-spacing: 1px; text-transform: uppercase;
+    }
+
+    /* ─── DONATE ────────────────────────────────────────── */
+    .donate {
+      background: linear-gradient(135deg, var(--navy) 0%, #0000a0 60%, #000090 100%);
+      color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .donate-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 50%, rgba(255,153,51,0.1), transparent 50%);
+    }
+    .donate-inner { position: relative; z-index: 2; }
+    .donate-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .donate-title { font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+    .donate-title .accent { color: var(--saffron); }
+    .donate-desc { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 32px; }
+    .donate-btns { display: flex; flex-wrap: wrap; gap: 14px; }
+    .donate-qr {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      text-align: center;
+    }
+    .qr-placeholder {
+      width: 160px; height: 160px;
+      background: var(--white);
+      border-radius: 12px;
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px;
+    }
+    .qr-grid {
+      width: 100%; height: 100%;
+      display: grid; grid-template-columns: repeat(7,1fr); gap: 2px;
+    }
+    .qr-cell { border-radius: 1px; }
+    .qr-dark { background: var(--navy); }
+    .qr-light { background: var(--white); }
+    .qr-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+    .qr-sub { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+
+    /* ─── CONTACT ───────────────────────────────────────── */
+    .contact { background: var(--white); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 60px; align-items: start;
+    }
+    .contact-info-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: var(--light-bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .contact-label { font-size: 0.75rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+    .contact-value { font-size: 0.95rem; color: var(--text-dark); font-weight: 500; }
+    .contact-value a { color: var(--navy); } .contact-value a:hover { color: var(--saffron); }
+    .map-placeholder {
+      background: var(--light-bg);
+      border-radius: var(--radius);
+      height: 200px; margin-top: 24px;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px dashed var(--border);
+      font-size: 0.85rem; color: var(--text-light);
+      flex-direction: column; gap: 8px;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 0.82rem; font-weight: 600; color: var(--text-mid); }
+    .form-input, .form-textarea {
+      padding: 13px 16px; border-radius: 10px;
+      border: 1.5px solid var(--border);
+      font-size: 0.9rem; font-family: inherit;
+      color: var(--text-dark);
+      background: var(--off-white);
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--navy); background: var(--white); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .footer {
+      background: #050520;
+      color: rgba(255,255,255,0.75);
+      padding-top: 64px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 48px; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand {}
+    .footer-logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .footer-logo { width: 44px; }
+    .footer-brand-name { font-size: 1.05rem; font-weight: 800; color: var(--white); }
+    .footer-brand-name span { color: var(--saffron); }
+    .footer-about { font-size: 0.82rem; line-height: 1.8; margin-bottom: 20px; color: rgba(255,255,255,0.55); }
+    .footer-social { display: flex; gap: 10px; }
+    .social-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; transition: var(--transition);
+    }
+    .social-icon:hover { background: var(--saffron); color: var(--white); }
+    .footer-col-title {
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--saffron); margin-bottom: 18px;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.55); transition: var(--transition); }
+    .footer-links a:hover { color: var(--white); padding-left: 4px; }
+
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      padding: 20px 0;
+    }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+    .footer-flag { display: flex; gap: 4px; align-items: center; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+    .flag-stripe { height: 10px; width: 26px; border-radius: 2px; }
+
+    /* ─── MOBILE NAV OVERLAY ────────────────────────────── */
+    .mobile-nav {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: var(--navy);
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav .nav-link {
+      font-size: 1.3rem; color: rgba(255,255,255,0.85);
+      padding: 14px 32px;
+    }
+    .mobile-nav .nav-link:hover { color: var(--saffron); background: rgba(255,255,255,0.06); border-radius: 10px; }
+    .mobile-nav-close {
+      position: absolute; top: 20px; right: 20px;
+      color: var(--white); font-size: 1.8rem; padding: 8px;
+      transition: var(--transition);
+    }
+    .mobile-nav-close:hover { color: var(--saffron); }
+
+    /* ─── SCROLL TO TOP ─────────────────────────────────── */
+    .scroll-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 800;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--navy);
+      color: var(--white); font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-md);
+      opacity: 0; pointer-events: none;
+      transition: var(--transition);
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top:hover { background: var(--saffron); transform: translateY(-2px); }
+
+    /* ─── ANIMATIONS ────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .about-grid, .mv-grid, .leaders-grid, .donate-grid, .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .pestel-grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:first-child { grid-column: span 2; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .section-pad { padding: 56px 0; }
+      .hero-stats { gap: 20px; }
+      .hero-stat-value { font-size: 1.8rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .programs-grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: auto; }
+      .pestel-grid { grid-template-columns: repeat(2,1fr); }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ─── HINDI CONTENT ─────────────────────────────────── */
+    [data-hi] { display: none; }
+    body.hindi-mode [data-en] { display: none; }
+    body.hindi-mode [data-hi] { display: block; }
+    body.hindi-mode span[data-en] { display: none; }
+    body.hindi-mode span[data-hi] { display: inline; }
+    span[data-hi] { display: none; }
+
+    /* ─── ACTIVE NAV INDICATOR ──────────────────────────── */
+    .nav-link.active-page { color: var(--navy); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════ TOP BAR ══════════════════════════ -->
+<div class="top-bar" role="banner">
+  <div class="container">
+    <span>
+      ✉ <a href="mailto:pestelfoundationtrust@gmail.com">pestelfoundationtrust@gmail.com</a>
+      &nbsp;|&nbsp; 🇮🇳 Registered NGO &nbsp;|&nbsp; NITI Aayog Registered
+    </span>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
+      <button class="lang-btn" id="btn-hi" onclick="setLang('hi')" aria-pressed="false">हिं</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ NAVBAR ═══════════════════════════ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <!-- Logo + Brand -->
+      <a href="#home" class="nav-brand" aria-label="PESTEL Foundation Home">
+        <svg class="nav-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Chakra / Golden Dharmachakra Logo -->
+          <circle cx="50" cy="50" r="46" stroke="#000080" stroke-width="4"/>
+          <circle cx="50" cy="50" r="36" stroke="#FF9933" stroke-width="2"/>
+          <circle cx="50" cy="50" r="8" fill="#000080"/>
+          <!-- 24 spokes -->
+          <g stroke="#000080" stroke-width="1.5" stroke-linecap="round">
+            <line x1="50" y1="14" x2="50" y2="42"/>
+            <line x1="50" y1="58" x2="50" y2="86"/>
+            <line x1="14" y1="50" x2="42" y2="50"/>
+            <line x1="58" y1="50" x2="86" y2="50"/>
+            <line x1="27.1" y1="27.1" x2="44.3" y2="44.3"/>
+            <line x1="55.7" y1="55.7" x2="72.9" y2="72.9"/>
+            <line x1="72.9" y1="27.1" x2="55.7" y2="44.3"/>
+            <line x1="44.3" y1="55.7" x2="27.1" y2="72.9"/>
+            <!-- Intermediate spokes -->
+            <line x1="19.5" y1="37.5" x2="43" y2="46.8"/>
+            <line x1="57" y1="53.2" x2="80.5" y2="62.5"/>
+            <line x1="62.5" y1="19.5" x2="53.2" y2="43"/>
+            <line x1="46.8" y1="57" x2="37.5" y2="80.5"/>
+            <line x1="37.5" y1="19.5" x2="46.8" y2="43"/>
+            <line x1="53.2" y1="57" x2="62.5" y2="80.5"/>
+            <line x1="19.5" y1="62.5" x2="43" y2="53.2"/>
+            <line x1="57" y1="46.8" x2="80.5" y2="37.5"/>
+          </g>
+          <!-- Outer decoration -->
+          <circle cx="50" cy="50" r="46" stroke="#138808" stroke-width="1.5" stroke-dasharray="4 4"/>
+        </svg>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">PESTEL <span>Foundation</span></span>
+          <span class="nav-brand-sub">Trust | India</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="nav-links" role="menubar">
+        <a href="#home"      class="nav-link" role="menuitem">Home</a>
+        <a href="#about"     class="nav-link" role="menuitem">About</a>
+        <a href="#mission"   class="nav-link" role="menuitem">Mission</a>
+        <a href="#leadership" class="nav-link" role="menuitem">Leadership</a>
+        <a href="#programs"  class="nav-link" role="menuitem">Programs</a>
+        <a href="#gallery"   class="nav-link" role="menuitem">Gallery</a>
+        <a href="#contact"   class="nav-link" role="menuitem">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#donate" class="btn btn-primary">Donate Now</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+  <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="Close menu">✕</button>
+  <a href="#home"       class="nav-link" onclick="toggleMobileNav()">Home</a>
+  <a href="#about"      class="nav-link" onclick="toggleMobileNav()">About Us</a>
+  <a href="#mission"    class="nav-link" onclick="toggleMobileNav()">Mission & Vision</a>
+  <a href="#leadership" class="nav-link" onclick="toggleMobileNav()">Leadership</a>
+  <a href="#programs"   class="nav-link" onclick="toggleMobileNav()">Programs</a>
+  <a href="#gallery"    class="nav-link" onclick="toggleMobileNav()">Gallery</a>
+  <a href="#contact"    class="nav-link" onclick="toggleMobileNav()">Contact</a>
+  <a href="#donate"     class="btn btn-primary" onclick="toggleMobileNav()" style="margin-top:16px">Donate Now</a>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════════════════ -->
+<section class="hero" id="home" aria-label="Hero banner">
+  <div class="hero-bg-pattern"></div>
+  <!-- Large Chakra Background -->
+  <div class="hero-chakra-bg" aria-hidden="true">
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="190" stroke="white" stroke-width="8"/>
+      <circle cx="200" cy="200" r="150" stroke="white" stroke-width="4"/>
+      <circle cx="200" cy="200" r="30" fill="white"/>
+      <g stroke="white" stroke-width="3">
+        <line x1="200" y1="10"  x2="200" y2="170"/>
+        <line x1="200" y1="230" x2="200" y2="390"/>
+        <line x1="10"  y1="200" x2="170" y2="200"/>
+        <line x1="230" y1="200" x2="390" y2="200"/>
+        <line x1="67"  y1="67"  x2="173" y2="173"/>
+        <line x1="227" y1="227" x2="333" y2="333"/>
+        <line x1="333" y1="67"  x2="227" y2="173"/>
+        <line x1="173" y1="227" x2="67"  y2="333"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span data-en>Empowering India</span>
+        <span data-hi>भारत सशक्तिकरण</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span data-en>PESTEL <span class="highlight">Foundation</span><br/>Trust</span>
+        <span data-hi>पेस्टल <span class="highlight">फाउंडेशन</span><br/>ट्रस्ट</span>
+      </h1>
+
+      <p class="hero-tagline">
+        <span data-en>Empowering Society Through <span style="color:#4ade80">Inclusive Development</span></span>
+        <span data-hi>समावेशी विकास के माध्यम से समाज को सशक्त बनाना</span>
+      </p>
+
+      <p class="hero-desc">
+        <span data-en>A voluntary, not-for-profit organization committed to delivering public services and advancing the cause of common people across India — from grassroots to governance.</span>
+        <span data-hi>एक स्वैच्छिक, गैर-लाभकारी संगठन जो भारत भर में आम लोगों की सेवा और उनके उद्देश्य को आगे बढ़ाने के लिए प्रतिबद्ध है।</span>
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#donate"    class="btn btn-primary" aria-label="Donate to PESTEL Foundation">
+          ♥ <span data-en>Donate Now</span><span data-hi>दान करें</span>
+        </a>
+        <a href="#programs"  class="btn btn-green" aria-label="Volunteer with us">
+          🤝 <span data-en>Volunteer</span><span data-hi>स्वयंसेवक बनें</span>
+        </a>
+        <a href="#contact"   class="btn btn-outline" aria-label="Contact PESTEL Foundation">
+          ✉ <span data-en>Contact Us</span><span data-hi>संपर्क करें</span>
+        </a>
+      </div>
+
+      <div class="hero-stats" role="region" aria-label="Foundation statistics">
+        <div class="hero-stat-item">
+          <div class="hero-stat-value">200+</div>
+          <div class="hero-stat-label">
+            <span data-en>Members &amp; Volunteers</span>
+            <span data-hi>सदस्य और स्वयंसेवक</span>
+          </div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-value">10+</div>
+          <div class="hero-stat-label">
+            <span data-en>States &amp; UTs</span>
+            <span data-hi>राज्य और केंद्र शासित प्रदेश</span>
+          </div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-value">🌏</div>
+          <div class="hero-stat-label">
+            <span data-en>Nationwide Visibility</span>
+            <span data-hi>राष्ट्रव्यापी उपस्थिति</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- India flag bar at bottom -->
+  <div class="flag-bar" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+</section>
+
+<!-- ══════════════════ ABOUT ═════════════════════════════ -->
+<section class="about section-pad" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Visual -->
+      <div class="about-visual reveal">
+        <div class="about-chakra-wrap">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="92" stroke="#000080" stroke-width="6"/>
+            <circle cx="100" cy="100" r="72" stroke="#FF9933" stroke-width="3"/>
+            <circle cx="100" cy="100" r="16" fill="#000080"/>
+            <circle cx="100" cy="100" r="8" fill="#FF9933"/>
+            <g stroke="#000080" stroke-width="2.5" stroke-linecap="round">
+              <line x1="100" y1="28" x2="100" y2="84"/>
+              <line x1="100" y1="116" x2="100" y2="172"/>
+              <line x1="28" y1="100" x2="84" y2="100"/>
+              <line x1="116" y1="100" x2="172" y2="100"/>
+              <line x1="54.2" y1="54.2" x2="88.6" y2="88.6"/>
+              <line x1="111.4" y1="111.4" x2="145.8" y2="145.8"/>
+              <line x1="145.8" y1="54.2" x2="111.4" y2="88.6"/>
+              <line x1="88.6" y1="111.4" x2="54.2" y2="145.8"/>
+              <line x1="39" y1="75"  x2="86" y2="93.6"/>
+              <line x1="114" y1="106.4" x2="161" y2="125"/>
+              <line x1="125" y1="39"  x2="106.4" y2="86"/>
+              <line x1="93.6" y1="114" x2="75" y2="161"/>
+              <line x1="75" y1="39"   x2="93.6" y2="86"/>
+              <line x1="106.4" y1="114" x2="125" y2="161"/>
+              <line x1="39" y1="125"  x2="86" y2="106.4"/>
+              <line x1="114" y1="93.6" x2="161" y2="75"/>
+            </g>
+            <circle cx="100" cy="100" r="92" stroke="#138808" stroke-width="2" stroke-dasharray="6 5"/>
+          </svg>
+          <!-- Registrations badge -->
+          <div class="about-badge-reg">
+            <div class="about-badge-item"><span class="dot dot-saffron"></span>Indian Trusts Act, 1882</div>
+            <div class="about-badge-item"><span class="dot dot-navy"></span>NITI Aayog Registered</div>
+            <div class="about-badge-item"><span class="dot dot-green"></span>MSME Registered</div>
+            <div class="about-badge-item"><span class="dot dot-saffron"></span>CSR Partner Eligible</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="about-text reveal">
+        <span class="section-label">
+          <span data-en>About Us</span><span data-hi>हमारे बारे में</span>
+        </span>
+        <h2 class="section-title" id="about-title">
+          <span data-en>Who We Are</span>
+          <span data-hi>हम कौन हैं</span>
+        </h2>
+        <div class="divider"></div>
+        <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.9;margin-bottom:20px;">
+          <span data-en>PESTEL Foundation Trust is a <strong>voluntary, not-for-profit organization</strong> committed to delivering public services and advancing the cause of common people across India. We believe in transparent governance, sustainable impact, and inclusive community development.</span>
+          <span data-hi>पेस्टल फाउंडेशन ट्रस्ट एक <strong>स्वैच्छिक, गैर-लाभकारी संगठन</strong> है जो पूरे भारत में सार्वजनिक सेवाएं प्रदान करने और आम लोगों के उद्देश्य को आगे बढ़ाने के लिए प्रतिबद्ध है। हम पारदर्शी प्रशासन, टिकाऊ प्रभाव और समावेशी सामुदायिक विकास में विश्वास करते हैं।</span>
+        </p>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.9;margin-bottom:28px;">
+          <span data-en>Operating across Political, Economic, Social, Technological, Environmental, and Legal domains, we drive change at the grassroots level while engaging with policy and governance frameworks.</span>
+          <span data-hi>राजनीतिक, आर्थिक, सामाजिक, तकनीकी, पर्यावरणीय और कानूनी क्षेत्रों में काम करते हुए, हम नीति और शासन ढांचे के साथ संलग्न होते हुए जमीनी स्तर पर परिवर्तन लाते हैं।</span>
+        </p>
+
+        <div class="about-regs">
+          <div class="about-reg-item">
+            <span class="about-reg-icon">🏛️</span>
+            <div>
+              <div class="about-reg-text">Indian Trusts Act, 1882</div>
+              <div class="about-reg-sub">Registered under Govt. of NCT Delhi</div>
+            </div>
+          </div>
+          <div class="about-reg-item">
+            <span class="about-reg-icon">🇮🇳</span>
+            <div>
+              <div class="about-reg-text">NITI Aayog Registered</div>
+              <div class="about-reg-sub">Unique ID issued by Government of India</div>
+            </div>
+          </div>
+          <div class="about-reg-item">
+            <span class="about-reg-icon">🏭</span>
+            <div>
+              <div class="about-reg-text">MSME Registered</div>
+              <div class="about-reg-sub">Ministry of Micro, Small &amp; Medium Enterprises</div>
+            </div>
+          </div>
+          <div class="about-reg-item">
+            <span class="about-reg-icon">🤝</span>
+            <div>
+              <div class="about-reg-text">CSR Partnership Eligible</div>
+              <div class="about-reg-sub">Open to corporate social responsibility collaborations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ MISSION & VISION ═════════════════ -->
+<section class="mission-vision section-pad" id="mission" aria-labelledby="mv-title">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">
+        <span data-en>Our Purpose</span><span data-hi>हमारा उद्देश्य</span>
+      </span>
+      <h2 class="section-title" id="mv-title">
+        <span data-en>Mission &amp; Vision</span>
+        <span data-hi>मिशन और दृष्टि</span>
+      </h2>
+      <div class="divider divider-center"></div>
+    </div>
+
+    <div class="mv-grid reveal">
+      <div class="mv-card mv-card-mission">
+        <div class="mv-card-bg-shape"></div>
+        <div class="mv-card-icon">🎯</div>
+        <div class="mv-card-title">
+          <span data-en>Our Mission</span><span data-hi>हमारा मिशन</span>
+        </div>
+        <p class="mv-card-text">
+          <span data-en>To drive sustainable development through community engagement, awareness, and service delivery across key sectors — building bridges between citizens and governance for an empowered, self-reliant India.</span>
+          <span data-hi>प्रमुख क्षेत्रों में सामुदायिक जुड़ाव, जागरूकता और सेवा वितरण के माध्यम से टिकाऊ विकास को प्रेरित करना — एक सशक्त, आत्मनिर्भर भारत के लिए नागरिकों और शासन के बीच सेतु बनाना।</span>
+        </p>
+      </div>
+      <div class="mv-card mv-card-vision">
+        <div class="mv-card-bg-shape"></div>
+        <div class="mv-card-icon">🌅</div>
+        <div class="mv-card-title">
+          <span data-en>Our Vision</span><span data-hi>हमारी दृष्टि</span>
+        </div>
+        <p class="mv-card-text">
+          <span data-en>To build an inclusive, equitable, and empowered society where every individual — regardless of caste, gender, or geography — has access to opportunities, rights, and dignified living.</span>
+          <span data-hi>एक समावेशी, न्यायसंगत और सशक्त समाज बनाना जहां हर व्यक्ति — जाति, लिंग या भूगोल की परवाह किए बिना — अवसरों, अधिकारों और गरिमामय जीवन तक पहुंच हो।</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- PESTEL Acronym -->
+    <div class="reveal" style="margin-top:48px;">
+      <p class="pestel-title text-center">
+        <span data-en>Understanding PESTEL — Our Core Framework</span>
+        <span data-hi>पेस्टल को समझें — हमारा मुख्य ढांचा</span>
+      </p>
+      <div class="pestel-grid">
+        <div class="pestel-card">
+          <div class="pestel-letter" style="color:#dc2626">P</div>
+          <div class="pestel-word">
+            <span data-en>Political</span><span data-hi>राजनीतिक</span>
+          </div>
+        </div>
+        <div class="pestel-card">
+          <div class="pestel-letter" style="color:#f59e0b">E</div>
+          <div class="pestel-word">
+            <span data-en>Economic</span><span data-hi>आर्थिक</span>
+          </div>
+        </div>
+        <div class="pestel-card">
+          <div class="pestel-letter" style="color:#3b82f6">S</div>
+          <div class="pestel-word">
+            <span data-en>Social</span><span data-hi>सामाजिक</span>
+          </div>
+        </div>
+        <div class="pestel-card">
+          <div class="pestel-letter" style="color:#8b5cf6">T</div>
+          <div class="pestel-word">
+            <span data-en>Technological</span><span data-hi>तकनीकी</span>
+          </div>
+        </div>
+        <div class="pestel-card">
+          <div class="pestel-letter" style="color:#138808">E</div>
+          <div class="pestel-word">
+            <span data-en>Environmental</span><span data-hi>पर्यावरणीय</span>
+          </div>
+        </div>
+        <div class="pestel-card">
+          <div class="pestel-letter" style="color:#000080">L</div>
+          <div class="pestel-word">
+            <span data-en>Legal</span><span data-hi>कानूनी</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ LEADERSHIP ════════════════════════ -->
+<section class="leadership section-pad" id="leadership" aria-labelledby="leader-title">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">
+        <span data-en>Our Leadership</span><span data-hi>हमारा नेतृत्व</span>
+      </span>
+      <h2 class="section-title" id="leader-title">
+        <span data-en>Voices of PESTEL</span>
+        <span data-hi>पेस्टल की आवाज़ें</span>
+      </h2>
+      <div class="divider divider-center"></div>
+    </div>
+
+    <div class="leaders-grid reveal">
+      <!-- President -->
+      <article class="leader-card">
+        <div class="leader-header leader-header-president">
+          <div class="leader-photo" aria-label="Photo of Shri Hitesh Kumar Sharma, President">
+            <div class="leader-photo-placeholder">🧑‍💼</div>
+          </div>
+          <div>
+            <div class="leader-name">Shri Hitesh Kumar Sharma</div>
+            <div class="leader-role">
+              <span data-en>President, PESTEL Foundation Trust</span>
+              <span data-hi>अध्यक्ष, पेस्टल फाउंडेशन ट्रस्ट</span>
+            </div>
+          </div>
+        </div>
+        <div class="leader-body">
+          <div class="leader-quote">"</div>
+          <p class="leader-message">
+            <span data-en>In a nation as diverse and vibrant as India, the true measure of our progress lies in the wellbeing of every citizen — especially those at the margins. At PESTEL Foundation, we are driven by a singular purpose: to serve, to empower, and to transform lives through meaningful action.<br/><br/>Our work spans education, environment, rural development, health, and human rights — areas where the need is greatest and the potential for change is limitless. I firmly believe that inclusive growth is not just a policy objective — it is a moral imperative. Every tree planted, every book distributed, every farmer assisted, and every woman empowered is a step toward the India our Constitution envisions.<br/><br/>I invite all of you — citizens, institutions, and change-makers — to join us in this journey of nation-building.</span>
+            <span data-hi>भारत जैसे विविध और जीवंत राष्ट्र में, हमारी प्रगति का सही माप हर नागरिक — विशेष रूप से हाशिए पर रहने वालों — की भलाई में निहित है। पेस्टल फाउंडेशन में, हम एक ही उद्देश्य से प्रेरित हैं: सेवा करना, सशक्त बनाना और सार्थक कार्यों के माध्यम से जीवन को बदलना।<br/><br/>हमारा कार्य शिक्षा, पर्यावरण, ग्रामीण विकास, स्वास्थ्य और मानवाधिकार तक फैला है। मेरा दृढ़ विश्वास है कि समावेशी विकास केवल एक नीतिगत लक्ष्य नहीं है — यह एक नैतिक अनिवार्यता है।</span>
+          </p>
+          <div class="leader-sign">
+            <span>—</span>
+            <span class="leader-sign-name">Shri Hitesh Kumar Sharma</span>
+            <span style="color:var(--text-light);font-size:0.75rem;">&nbsp;| President</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CEO -->
+      <article class="leader-card">
+        <div class="leader-header leader-header-ceo">
+          <div class="leader-photo" aria-label="Photo of Shri Sushil Chandra, CEO (Placeholder)">
+            <div class="leader-photo-placeholder" title="CEO Photo – Shri Sushil Chandra (Placeholder)">📸</div>
+          </div>
+          <div>
+            <div class="leader-name">Shri Sushil Chandra</div>
+            <div class="leader-role">
+              <span data-en>Chief Executive Officer, PESTEL Foundation Trust</span>
+              <span data-hi>मुख्य कार्यकारी अधिकारी, पेस्टल फाउंडेशन ट्रस्ट</span>
+            </div>
+          </div>
+        </div>
+        <div class="leader-body">
+          <div class="leader-quote">"</div>
+          <p class="leader-message">
+            <span data-en>The future of India belongs to its youth — and at PESTEL Foundation, everything we do is ultimately in service of that future. From awareness campaigns in villages to constitutional literacy in schools, from clean water initiatives to digital empowerment, we are building the infrastructure of opportunity.<br/><br/>Grassroots impact is not a slogan for us; it is our operational reality. I have seen firsthand how a single intervention — a water plant, a scholarship, an RTI awareness session — can alter the trajectory of an entire community. That is the power of organized compassion and determined action.<br/><br/>Together, we are not just building programs — we are building the backbone of a stronger, more equitable India. I urge every youth, every professional, every organization to be part of this movement.</span>
+            <span data-hi>भारत का भविष्य उसकी युवा पीढ़ी का है — और पेस्टल फाउंडेशन में, हम जो कुछ भी करते हैं वह अंततः उस भविष्य की सेवा में है। गांवों में जागरूकता अभियानों से लेकर स्कूलों में संवैधानिक साक्षरता तक, स्वच्छ जल पहलों से लेकर डिजिटल सशक्तिकरण तक, हम अवसरों की बुनियाद बना रहे हैं।<br/><br/>जमीनी प्रभाव हमारे लिए एक नारा नहीं है; यह हमारी परिचालन वास्तविकता है। मैंने खुद देखा है कि एक एकल हस्तक्षेप — एक जल संयंत्र, एक छात्रवृत्ति — पूरे समुदाय की दिशा कैसे बदल सकता है।</span>
+          </p>
+          <div class="leader-sign">
+            <span>—</span>
+            <span class="leader-sign-name">Shri Sushil Chandra</span>
+            <span style="color:var(--text-light);font-size:0.75rem;">&nbsp;| CEO</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PROGRAMS ══════════════════════════ -->
+<section class="programs section-pad" id="programs" aria-labelledby="programs-title">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">
+        <span data-en>What We Do</span><span data-hi>हम क्या करते हैं</span>
+      </span>
+      <h2 class="section-title" id="programs-title">
+        <span data-en>Areas of Work &amp; Programs</span>
+        <span data-hi>कार्य क्षेत्र और कार्यक्रम</span>
+      </h2>
+      <div class="divider divider-center"></div>
+      <p class="section-subtitle">
+        <span data-en>We operate across 13 core sectors and multiple key activities, touching millions of lives through targeted, sustainable interventions.</span>
+        <span data-hi>हम 13 मुख्य क्षेत्रों और कई प्रमुख गतिविधियों में काम करते हैं, लक्षित और टिकाऊ हस्तक्षेपों के माध्यम से लाखों जीवन को छूते हैं।</span>
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="programs-tabs reveal" role="tablist" aria-label="Program categories">
+      <button class="prog-tab active" onclick="switchTab('sectors', this)" role="tab" aria-selected="true">
+        <span data-en>Core Sectors</span><span data-hi>मुख्य क्षेत्र</span>
+      </button>
+      <button class="prog-tab" onclick="switchTab('activities', this)" role="tab" aria-selected="false">
+        <span data-en>Key Activities</span><span data-hi>प्रमुख गतिविधियाँ</span>
+      </button>
+    </div>
+
+    <!-- Sectors Grid -->
+    <div class="programs-grid reveal" id="tab-sectors" role="tabpanel">
+      <div class="prog-card"><div class="prog-icon">🌾</div><div class="prog-name"><span data-en>Agriculture</span><span data-hi>कृषि</span></div></div>
+      <div class="prog-card"><div class="prog-icon">🏙️</div><div class="prog-name"><span data-en>Civic Issues</span><span data-hi>नागरिक मुद्दे</span></div></div>
+      <div class="prog-card"><div class="prog-icon">🚨</div><div class="prog-name"><span data-en>Disaster Management</span><span data-hi>आपदा प्रबंधन</span></div></div>
+      <div class="prog-card"><div class="prog-icon">📚</div><div class="prog-name"><span data-en>Education &amp; Literacy</span><span data-hi>शिक्षा और साक्षरता</span></div></div>
+      <div class="prog-card"><div class="prog-icon">🌳</div><div class="prog-name"><span data-en>Environment &amp; Forests</span><span data-hi>पर्यावरण और वन</span></div></div>
+      <div class="prog-card"><div class="prog-icon">🏥</div><div class="prog-name"><span data-en>Health &amp; Family Welfare</span><span data-hi>स्वास्थ्य और परिवार कल्याण</span></div></div>
+      <div class="prog-card"><div class="prog-icon">⚖️</div><div class="prog-name"><span data-en>Human Rights</span><span data-hi>मानव अधिकार</span></div></div>
+      <div class="prog-card"><div class="prog-icon">💻</div><div class="prog-name"><span data-en>ICT</span><span data-hi>आईसीटी</span></div></div>
+      <div class="prog-card"><div class="prog-icon">🥗</div><div class="prog-name"><span data-en>Nutrition</span><span data-hi>पोषण</span></div></div>
+      <div class="prog-card"><div class="prog-icon">📋</div><div class="prog-name"><span data-en>RTI &amp; Advocacy</span><span data-hi>आरटीआई और अधिवक्ता</span></div></div>
+      <div class="prog-card"><div class="prog-icon">🏡</div><div class="prog-name"><span data-en>Rural Development</span><span data-hi>ग्रामीण विकास</span></div></div>
+      <div class="prog-card"><div class="prog-icon">👩‍💼</div><div class="prog-name"><span data-en>Women Empowerment</span><span data-hi>महिला सशक्तिकरण</span></div></div>
+      <div class="prog-card"><div class="prog-icon">🧑‍🎓</div><div class="prog-name"><span data-en>Youth Affairs</span><span data-hi>युवा मामले</span></div></div>
+    </div>
+
+    <!-- Activities Grid -->
+    <div class="activities-grid reveal" id="tab-activities" role="tabpanel">
+      <div class="activity-card"><span class="activity-icon">🌱</span><div><div class="activity-name"><span data-en>Plantation Drives</span><span data-hi>वृक्षारोपण अभियान</span></div><div class="activity-desc"><span data-en>Mass tree plantation for environmental restoration</span><span data-hi>पर्यावरण पुनर्स्थापना के लिए सामूहिक वृक्षारोपण</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">💧</span><div><div class="activity-name"><span data-en>Water Plant Installation</span><span data-hi>जल संयंत्र स्थापना</span></div><div class="activity-desc"><span data-en>Clean drinking water access in rural areas</span><span data-hi>ग्रामीण क्षेत्रों में स्वच्छ पेयजल पहुँच</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">👨‍🌾</span><div><div class="activity-name"><span data-en>Farmers Welfare Programs</span><span data-hi>किसान कल्याण कार्यक्रम</span></div><div class="activity-desc"><span data-en>Support, training, and scheme linkage for farmers</span><span data-hi>किसानों के लिए सहायता, प्रशिक्षण और योजना लिंकेज</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">🧓</span><div><div class="activity-name"><span data-en>Old Age &amp; Disability Assistance</span><span data-hi>वृद्ध एवं दिव्यांग सहायता</span></div><div class="activity-desc"><span data-en>Support programs for elderly and disabled persons</span><span data-hi>बुजुर्गों और दिव्यांगों के लिए सहायता कार्यक्रम</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">🏠</span><div><div class="activity-name"><span data-en>Orphanage Support</span><span data-hi>अनाथालय सहायता</span></div><div class="activity-desc"><span data-en>Resources and care for children in need</span><span data-hi>जरूरतमंद बच्चों के लिए संसाधन और देखभाल</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">📖</span><div><div class="activity-name"><span data-en>Constitutional &amp; Legal Awareness</span><span data-hi>संवैधानिक एवं कानूनी व्याख्यान</span></div><div class="activity-desc"><span data-en>Awareness sessions on rights and values</span><span data-hi>अधिकारों और मूल्यों पर जागरूकता सत्र</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">📚</span><div><div class="activity-name"><span data-en>Students Welfare Programs</span><span data-hi>पुस्तक वितरण</span></div><div class="activity-desc"><span data-en>Free books for underprivileged students and assistance for school dropouts</span><span data-hi>वंचित छात्रों के लिए निःशुल्क पुस्तकें और स्कूल छोड़ने वाले छात्रों के लिए सहायता</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">🗺️</span><div><div class="activity-name"><span data-en>Rural Development Initiatives</span><span data-hi>झारखंड विकास पहल</span></div><div class="activity-desc"><span data-en>Targeted programs for tribal and rural </span><span data-hi>आदिवासी और ग्रामीण झारखंड के लिए लक्षित कार्यक्रम</span></div></div></div>
+      <div class="activity-card"><span class="activity-icon">📣</span><div><div class="activity-name"><span data-en>Awareness Campaigns</span><span data-hi>जागरूकता अभियान</span></div><div class="activity-desc"><span data-en>Health, rights, and governance awareness drives</span><span data-hi>स्वास्थ्य, अधिकार और शासन जागरूकता अभियान</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GALLERY ═══════════════════════════ -->
+<section class="gallery section-pad" id="gallery" aria-labelledby="gallery-title">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">
+        <span data-en>Media & Gallery</span><span data-hi>मीडिया और गैलरी</span>
+      </span>
+      <h2 class="section-title" id="gallery-title">
+        <span data-en>Our Work in Pictures</span>
+        <span data-hi>तस्वीरों में हमारा काम</span>
+      </h2>
+      <div class="divider divider-center"></div>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" style="min-height:300px;">
+        <div class="gallery-badge">Featured</div>
+        <div class="gallery-placeholder-icon">🖼️</div>
+        <div class="gallery-placeholder-text">
+          <span data-en>Main Event / Campaign Photo</span>
+          <span data-hi>मुख्य कार्यक्रम / अभियान फोटो</span>
+        </div>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:6px;">Coming Soon</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder-icon">🌱</div>
+        <div class="gallery-placeholder-text">Plantation Drive</div>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">Coming Soon</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder-icon">💧</div>
+        <div class="gallery-placeholder-text">Water Initiative</div>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">Coming Soon</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder-icon">📚</div>
+        <div class="gallery-placeholder-text">Education Program</div>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">Coming Soon</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder-icon">👩‍💼</div>
+        <div class="gallery-placeholder-text">Women's Program</div>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:4px;">Coming Soon</p>
+      </div>
+    </div>
+
+    <!-- Press Releases placeholder -->
+    <div style="margin-top:48px;" class="reveal">
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:20px;">
+        <span data-en>📰 Press Releases &amp; News</span>
+        <span data-hi>📰 प्रेस विज्ञप्तियाँ और समाचार</span>
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+        <div style="background:var(--white);border-radius:var(--radius);padding:20px;border:1px solid var(--border);">
+          <div style="font-size:0.7rem;color:var(--saffron);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Coming Soon</div>
+          <div style="font-size:0.9rem;font-weight:600;color:var(--text-mid);">Latest Press Release</div>
+          <div style="font-size:0.8rem;color:var(--text-light);margin-top:6px;">News updates from PESTEL Foundation will appear here.</div>
+        </div>
+        <div style="background:var(--white);border-radius:var(--radius);padding:20px;border:1px solid var(--border);">
+          <div style="font-size:0.7rem;color:var(--green);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Coming Soon</div>
+          <div style="font-size:0.9rem;font-weight:600;color:var(--text-mid);">Event Coverage</div>
+          <div style="font-size:0.8rem;color:var(--text-light);margin-top:6px;">Media coverage and event reports will be published here.</div>
+        </div>
+        <div style="background:var(--white);border-radius:var(--radius);padding:20px;border:1px solid var(--border);">
+          <div style="font-size:0.7rem;color:var(--navy);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Coming Soon</div>
+          <div style="font-size:0.9rem;font-weight:600;color:var(--text-mid);">Impact Reports</div>
+          <div style="font-size:0.8rem;color:var(--text-light);margin-top:6px;">Annual impact reports and project outcomes will be listed here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ DONATE ════════════════════════════ -->
+<section class="donate section-pad" id="donate" aria-labelledby="donate-title">
+  <div class="donate-bg"></div>
+  <div class="container donate-inner">
+    <div class="donate-grid">
+      <div class="reveal">
+        <span class="section-label" style="color:var(--saffron-light);">
+          <span data-en>Support Our Mission</span><span data-hi>हमारे मिशन का समर्थन करें</span>
+        </span>
+        <h2 class="donate-title" id="donate-title">
+          <span data-en>Be the Change You <span class="accent">Wish to See</span></span>
+          <span data-hi>वो बदलाव बनें जो आप <span class="accent">देखना चाहते हैं</span></span>
+        </h2>
+        <p class="donate-desc">
+          <span data-en>Your contribution empowers communities, funds education, supports disaster relief, and helps us drive sustainable development across India. Every rupee counts. Every action matters.</span>
+          <span data-hi>आपका योगदान समुदायों को सशक्त बनाता है, शिक्षा को वित्त पोषित करता है, आपदा राहत का समर्थन करता है और हमें पूरे भारत में टिकाऊ विकास को आगे बढ़ाने में मदद करता है।</span>
+        </p>
+        <div class="donate-btns">
+          <a href="mailto:pestelfoundationtrust@gmail.com?subject=Donation%20Inquiry" class="btn btn-primary">
+            ♥ <span data-en>Donate Now</span><span data-hi>अभी दान करें</span>
+          </a>
+          <a href="mailto:pestelfoundationtrust@gmail.com?subject=Partnership%20Inquiry" class="btn btn-outline">
+            🤝 <span data-en>Become a Partner</span><span data-hi>भागीदार बनें</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- QR Code -->
+      <div class="donate-qr reveal">
+        <p class="qr-label">
+          <span data-en>Scan &amp; Donate</span><span data-hi>स्कैन करें और दान करें</span>
+        </p>
+        <div class="qr-placeholder" aria-label="Donation QR Code Placeholder">
+          <!-- Decorative QR pattern (placeholder) -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="136" height="136">
+            <!-- Top-left finder -->
+            <rect x="5" y="5" width="28" height="28" rx="3" fill="#000080"/>
+            <rect x="9" y="9" width="20" height="20" rx="2" fill="white"/>
+            <rect x="13" y="13" width="12" height="12" rx="1" fill="#000080"/>
+            <!-- Top-right finder -->
+            <rect x="67" y="5" width="28" height="28" rx="3" fill="#000080"/>
+            <rect x="71" y="9" width="20" height="20" rx="2" fill="white"/>
+            <rect x="75" y="13" width="12" height="12" rx="1" fill="#000080"/>
+            <!-- Bottom-left finder -->
+            <rect x="5" y="67" width="28" height="28" rx="3" fill="#000080"/>
+            <rect x="9" y="71" width="20" height="20" rx="2" fill="white"/>
+            <rect x="13" y="75" width="12" height="12" rx="1" fill="#000080"/>
+            <!-- Data dots (decorative) -->
+            <g fill="#000080">
+              <rect x="40" y="5" width="6" height="6" rx="1"/><rect x="50" y="5" width="6" height="6" rx="1"/>
+              <rect x="40" y="15" width="6" height="6" rx="1"/><rect x="56" y="15" width="6" height="6" rx="1"/>
+              <rect x="5" y="40" width="6" height="6" rx="1"/><rect x="15" y="40" width="6" height="6" rx="1"/>
+              <rect x="5" y="50" width="6" height="6" rx="1"/><rect x="5" y="56" width="6" height="6" rx="1"/>
+              <rect x="40" y="40" width="8" height="8" rx="1"/><rect x="52" y="40" width="6" height="6" rx="1"/>
+              <rect x="62" y="40" width="6" height="6" rx="1"/><rect x="40" y="52" width="6" height="6" rx="1"/>
+              <rect x="50" y="50" width="8" height="8" rx="1"/><rect x="62" y="56" width="6" height="6" rx="1"/>
+              <rect x="40" y="62" width="8" height="8" rx="1"/><rect x="56" y="62" width="6" height="6" rx="1"/>
+              <rect x="72" y="40" width="6" height="6" rx="1"/><rect x="82" y="40" width="6" height="6" rx="1"/>
+              <rect x="72" y="50" width="8" height="8" rx="1"/><rect x="86" y="52" width="6" height="6" rx="1"/>
+              <rect x="72" y="62" width="6" height="6" rx="1"/><rect x="82" y="68" width="6" height="6" rx="1"/>
+              <rect x="40" y="72" width="6" height="6" rx="1"/><rect x="50" y="78" width="6" height="6" rx="1"/>
+              <rect x="60" y="72" width="6" height="6" rx="1"/><rect x="72" y="78" width="6" height="6" rx="1"/>
+              <rect x="82" y="82" width="6" height="6" rx="1"/><rect x="56" y="86" width="6" height="6" rx="1"/>
+            </g>
+            <!-- Center logo hint -->
+            <rect x="44" y="44" width="12" height="12" rx="2" fill="#FF9933"/>
+          </svg>
+        </div>
+        <p class="qr-label" style="font-size:0.9rem;font-weight:600;color:rgba(255,255,255,0.85);">PESTEL Foundation Trust</p>
+        <p class="qr-sub">
+          <span data-en>QR Code — Donation gateway coming soon</span>
+          <span data-hi>क्यूआर कोड — दान गेटवे जल्द आ रहा है</span>
+        </p>
+        <p class="qr-sub" style="margin-top:8px;">pestelfoundationtrust@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ════════════════════════════ -->
+<section class="contact section-pad" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">
+        <span data-en>Get In Touch</span><span data-hi>संपर्क करें</span>
+      </span>
+      <h2 class="section-title" id="contact-title">
+        <span data-en>Contact Us</span><span data-hi>हमसे संपर्क करें</span>
+      </h2>
+      <div class="divider divider-center"></div>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="reveal">
+        <div class="contact-info-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:pestelfoundationtrust@gmail.com">pestelfoundationtrust@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">🏛️</div>
+          <div>
+            <div class="contact-label">
+              <span data-en>Registration</span><span data-hi>पंजीकरण</span>
+            </div>
+            <div class="contact-value">
+              <span data-en>Govt. of NCT Delhi, Indian Trusts Act 1882</span>
+              <span data-hi>एनसीटी दिल्ली सरकार, भारतीय न्यास अधिनियम 1882</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">🇮🇳</div>
+          <div>
+            <div class="contact-label">
+              <span data-en>National Presence</span><span data-hi>राष्ट्रीय उपस्थिति</span>
+            </div>
+            <div class="contact-value">
+              <span data-en>10+ States &amp; Union Territories across India</span>
+              <span data-hi>भारत भर में 10+ राज्य और केंद्र शासित प्रदेश</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">🤝</div>
+          <div>
+            <div class="contact-label">CSR &amp; Partnerships</div>
+            <div class="contact-value">
+              <span data-en>Open for corporate, NGO &amp; institutional collaborations</span>
+              <span data-hi>कॉर्पोरेट, एनजीओ और संस्थागत सहयोग के लिए खुले हैं</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div style="margin-top:8px;">
+          <div style="font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">
+            <span data-en>Follow Us</span><span data-hi>हमें फॉलो करें</span>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <a href="#" class="social-icon" aria-label="Facebook" style="background:var(--light-bg);color:var(--navy);border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);">𝖋</a>
+            <a href="#" class="social-icon" aria-label="Twitter/X" style="background:var(--light-bg);color:var(--navy);border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);">𝕏</a>
+            <a href="#" class="social-icon" aria-label="Instagram" style="background:var(--light-bg);color:var(--navy);border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);">📸</a>
+            <a href="#" class="social-icon" aria-label="YouTube" style="background:var(--light-bg);color:var(--navy);border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);">▶</a>
+            <a href="#" class="social-icon" aria-label="LinkedIn" style="background:var(--light-bg);color:var(--navy);border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition);">in</a>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-placeholder" aria-label="Map placeholder">
+          <span>🗺️</span>
+          <span style="font-size:0.82rem;font-weight:500;">
+            <span data-en>Map — New Delhi, India (Embed Google Maps here)</span>
+            <span data-hi>मानचित्र — नई दिल्ली, भारत (यहाँ गूगल मैप्स एम्बेड करें)</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="reveal">
+        <form class="contact-form" onsubmit="handleFormSubmit(event)" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">
+                <span data-en>Full Name *</span><span data-hi>पूरा नाम *</span>
+              </label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Your full name" required aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">
+                <span data-en>Email Address *</span><span data-hi>ईमेल पता *</span>
+              </label>
+              <input type="email" id="contact-email" class="form-input" placeholder="your@email.com" required aria-required="true" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">
+              <span data-en>Subject</span><span data-hi>विषय</span>
+            </label>
+            <input type="text" id="contact-subject" class="form-input" placeholder="How can we help?" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">
+              <span data-en>Your Message *</span><span data-hi>आपका संदेश *</span>
+            </label>
+            <textarea id="contact-message" class="form-textarea" placeholder="Write your message here..." required aria-required="true"></textarea>
+          </div>
+          <div id="form-success" style="display:none;color:var(--green);font-size:0.9rem;font-weight:600;padding:12px 0;">
+            ✅ <span data-en>Thank you! Your message has been received. We will get back to you soon.</span>
+            <span data-hi>धन्यवाद! आपका संदेश प्राप्त हो गया है। हम जल्द ही आपसे संपर्क करेंगे।</span>
+          </div>
+          <button type="submit" class="btn btn-navy" style="align-self:flex-start">
+            <span data-en>Send Message</span><span data-hi>संदेश भेजें</span> →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand col -->
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <svg class="footer-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" stroke="#FF9933" stroke-width="4"/>
+            <circle cx="50" cy="50" r="36" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+            <circle cx="50" cy="50" r="8" fill="#FF9933"/>
+            <g stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round">
+              <line x1="50" y1="14" x2="50" y2="42"/><line x1="50" y1="58" x2="50" y2="86"/>
+              <line x1="14" y1="50" x2="42" y2="50"/><line x1="58" y1="50" x2="86" y2="50"/>
+              <line x1="27.1" y1="27.1" x2="44.3" y2="44.3"/><line x1="55.7" y1="55.7" x2="72.9" y2="72.9"/>
+              <line x1="72.9" y1="27.1" x2="55.7" y2="44.3"/><line x1="44.3" y1="55.7" x2="27.1" y2="72.9"/>
+            </g>
+          </svg>
+          <div>
+            <div class="footer-brand-name">PESTEL <span>Foundation</span></div>
+            <div style="font-size:0.65rem;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase;">Trust | India</div>
+          </div>
+        </div>
+        <p class="footer-about">A voluntary, not-for-profit organization committed to empowering communities and advancing the cause of common people across India through inclusive, sustainable development.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="Facebook">𝖋</a>
+          <a href="#" class="social-icon" aria-label="Twitter/X">𝕏</a>
+          <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+          <a href="#" class="social-icon" aria-label="YouTube">▶</a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <!-- About links -->
+      <div>
+        <div class="footer-col-title">About</div>
+        <nav class="footer-links" aria-label="About navigation">
+          <a href="#about">About Us</a>
+          <a href="#mission">Mission &amp; Vision</a>
+          <a href="#leadership">Leadership</a>
+          <a href="#gallery">Gallery</a>
+        </nav>
+      </div>
+
+      <!-- Programs links -->
+      <div>
+        <div class="footer-col-title">Programs</div>
+        <nav class="footer-links" aria-label="Programs navigation">
+          <a href="#programs">Core Sectors</a>
+          <a href="#programs">Key Activities</a>
+          <a href="#programs">Education</a>
+          <a href="#programs">Women Empowerment</a>
+          <a href="#programs">Environment</a>
+        </nav>
+      </div>
+
+      <!-- Contact/Legal -->
+      <div>
+        <div class="footer-col-title">Contact &amp; Legal</div>
+        <div class="footer-links">
+          <a href="mailto:pestelfoundationtrust@gmail.com">pestelfoundationtrust@gmail.com</a>
+          <a href="#contact">Contact Form</a>
+          <a href="#donate">Donate</a>
+          <span style="color:rgba(255,255,255,0.35);font-size:0.78rem;">Registered: Indian Trusts Act, 1882</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:0.78rem;">NITI Aayog | MSME Registered</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2024 PESTEL Foundation Trust. All rights reserved. | Empowering India 🇮🇳
+      </p>
+      <div class="footer-flag">
+        <div class="flag-stripe" style="background:#FF9933;"></div>
+        <div class="flag-stripe" style="background:#ffffff;"></div>
+        <div class="flag-stripe" style="background:#138808;"></div>
+        <span>&nbsp; Made with ♥ for India</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ══════════════════ JAVASCRIPT ═══════════════════════ -->
+<script>
+  /* ── Language Toggle ── */
+  function setLang(lang) {
+    document.body.classList.toggle('hindi-mode', lang === 'hi');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-hi').classList.toggle('active', lang === 'hi');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+    document.getElementById('btn-hi').setAttribute('aria-pressed', lang === 'hi');
+    document.documentElement.lang = lang === 'hi' ? 'hi' : 'en';
+  }
+
+  /* ── Mobile Nav ── */
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    const hamburger = document.getElementById('hamburger');
+    const isOpen = nav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    nav.setAttribute('aria-hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  /* ── Programs Tab ── */
+  function switchTab(tab, btn) {
+    const sectors = document.getElementById('tab-sectors');
+    const activities = document.getElementById('tab-activities');
+    document.querySelectorAll('.prog-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    if (tab === 'sectors') {
+      sectors.style.display = 'grid';
+      activities.style.display = 'none';
+    } else {
+      sectors.style.display = 'none';
+      activities.style.display = 'grid';
+    }
+  }
+
+  /* ── Scroll Effects ── */
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  /* ── Intersection Observer (reveal animations) ── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ── Active Nav Link ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active-page', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(sec => sectionObserver.observe(sec));
+
+  /* ── Form Submit ── */
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const msg = document.getElementById('contact-message').value.trim();
+    if (!name || !email || !msg) return;
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 5000);
+  }
+
+  /* ── Close mobile nav on resize ── */
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      document.getElementById('mobileNav').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
