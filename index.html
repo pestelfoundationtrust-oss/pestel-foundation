@@ -728,6 +728,101 @@
     }
     .mobile-nav-close:hover { color: var(--saffron); }
 
+    /* ─── PRESS RELEASES & NEWS ─────────────────────────── */
+    .press { background: var(--off-white); }
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 12px;
+    }
+    .press-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .press-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+    .press-card-header {
+      background: linear-gradient(135deg, var(--navy), #0000a8);
+      padding: 22px 24px 18px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .press-card-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(255,153,51,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .press-card-tag {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--saffron); margin-bottom: 4px;
+    }
+    .press-card-title {
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--white); line-height: 1.3;
+    }
+    .press-card-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; gap: 14px; }
+    .press-card-desc { font-size: 0.86rem; color: var(--text-mid); line-height: 1.75; flex: 1; }
+    .press-drive-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--saffron), var(--saffron-dark));
+      color: var(--white);
+      font-size: 0.82rem; font-weight: 700;
+      padding: 11px 20px; border-radius: 50px;
+      transition: var(--transition);
+      align-self: flex-start;
+      box-shadow: 0 4px 14px rgba(255,153,51,0.35);
+    }
+    .press-drive-link:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,153,51,0.45); }
+    .press-drive-link svg { flex-shrink: 0; }
+    .press-attribution {
+      font-size: 0.72rem; color: var(--text-light);
+      font-style: italic; margin-top: 2px;
+    }
+    .press-featured {
+      background: linear-gradient(135deg, var(--navy) 0%, #00008f 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 44px;
+      display: flex; align-items: center; gap: 40px;
+      margin-bottom: 32px;
+      position: relative; overflow: hidden;
+      color: var(--white);
+    }
+    .press-featured::before {
+      content: '';
+      position: absolute; right: -60px; top: -60px;
+      width: 260px; height: 260px; border-radius: 50%;
+      background: rgba(255,153,51,0.08);
+    }
+    .press-featured-icon {
+      width: 80px; height: 80px; border-radius: 20px;
+      background: rgba(255,153,51,0.18);
+      border: 2px solid rgba(255,153,51,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; flex-shrink: 0;
+    }
+    .press-featured-tag {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--saffron); margin-bottom: 8px;
+    }
+    .press-featured-title {
+      font-size: 1.3rem; font-weight: 800; line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .press-featured-desc {
+      font-size: 0.9rem; color: rgba(255,255,255,0.72);
+      line-height: 1.75; margin-bottom: 20px; max-width: 520px;
+    }
+    @media (max-width: 700px) {
+      .press-featured { flex-direction: column; padding: 28px 24px; gap: 20px; }
+      .press-grid { grid-template-columns: 1fr; }
+    }
+
     /* ─── SCROLL TO TOP ─────────────────────────────────── */
     .scroll-top {
       position: fixed; bottom: 28px; right: 28px; z-index: 800;
@@ -847,6 +942,7 @@
         <a href="#leadership" class="nav-link" role="menuitem">Leadership</a>
         <a href="#programs"  class="nav-link" role="menuitem">Programs</a>
         <a href="#gallery"   class="nav-link" role="menuitem">Gallery</a>
+        <a href="#press"     class="nav-link" role="menuitem">News</a>
         <a href="#contact"   class="nav-link" role="menuitem">Contact</a>
       </div>
       <div class="nav-cta">
@@ -870,6 +966,7 @@
   <a href="#leadership" class="nav-link" onclick="toggleMobileNav()">Leadership</a>
   <a href="#programs"   class="nav-link" onclick="toggleMobileNav()">Programs</a>
   <a href="#gallery"    class="nav-link" onclick="toggleMobileNav()">Gallery</a>
+  <a href="#press"      class="nav-link" onclick="toggleMobileNav()">Press & News</a>
   <a href="#contact"    class="nav-link" onclick="toggleMobileNav()">Contact</a>
   <a href="#donate"     class="btn btn-primary" onclick="toggleMobileNav()" style="margin-top:16px">Donate Now</a>
 </div>
@@ -1524,6 +1621,113 @@
   </div>
 </section>
 
+<!-- ══════════════════ PRESS RELEASES & NEWS ════════════ -->
+<section class="press section-pad" id="press" aria-label="Press Releases and News">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Media & Updates</span>
+      <h2 class="section-title">Press Releases &amp; News</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-subtitle">Stay informed about the latest announcements, reports, and initiatives by PESTEL Foundation Trust.</p>
+    </div>
+
+    <!-- Featured Drive Block -->
+    <div class="press-featured reveal">
+      <div class="press-featured-icon">📁</div>
+      <div style="position:relative;z-index:2;">
+        <div class="press-featured-tag">📢 Official Document Archive</div>
+        <div class="press-featured-title">PESTEL Foundation — Press Releases &amp; Work Archive</div>
+        <div class="press-featured-desc">Access our complete collection of press releases, activity reports, field documentation, and official communications — all in one place on Google Drive. A transparent record of our work across India.</div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
+          <a href="https://drive.google.com/drive/folders/17ZaLwU8IyzxcMkx7y3SniUJE59PMccm3?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="press-drive-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4.65 20.5l3.46-6h11.77l-3.46 6H4.65zm1.04-1h9.27l2.46-4H8.15l-2.46 4zM12 3.5l5.77 10H6.23L12 3.5zm0 2.31L8.15 12.5h7.7L12 5.81zM1.88 14.5L5.34 8.5h2l-3.46 6h-2zm19.24 0h-2l-3.46-6h2l3.46 6z"/>
+            </svg>
+            Open Google Drive Folder
+          </a>
+          <span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-style:italic;">A Work of PESTEL Foundation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="press-grid">
+
+      <!-- Card 1 -->
+      <div class="press-card reveal">
+        <div class="press-card-header">
+          <div class="press-card-icon">📰</div>
+          <div>
+            <div class="press-card-tag">Press Release</div>
+            <div class="press-card-title">Official Announcements &amp; Statements</div>
+          </div>
+        </div>
+        <div class="press-card-body">
+          <p class="press-card-desc">Read our official press releases covering new program launches, partnerships, policy advocacy, and statements from PESTEL Foundation Trust leadership.</p>
+          <a href="https://drive.google.com/drive/folders/17ZaLwU8IyzxcMkx7y3SniUJE59PMccm3?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="press-drive-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4.65 20.5l3.46-6h11.77l-3.46 6H4.65zm1.04-1h9.27l2.46-4H8.15l-2.46 4zM12 3.5l5.77 10H6.23L12 3.5zm0 2.31L8.15 12.5h7.7L12 5.81zM1.88 14.5L5.34 8.5h2l-3.46 6h-2zm19.24 0h-2l-3.46-6h2l3.46 6z"/>
+            </svg>
+            View on Google Drive
+          </a>
+          <span class="press-attribution">— A Work of PESTEL Foundation</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="press-card reveal">
+        <div class="press-card-header">
+          <div class="press-card-icon">📊</div>
+          <div>
+            <div class="press-card-tag">Reports & Documentation</div>
+            <div class="press-card-title">Activity Reports &amp; Field Updates</div>
+          </div>
+        </div>
+        <div class="press-card-body">
+          <p class="press-card-desc">Detailed reports from our ground-level activities, community outreach programs, educational drives, and environmental initiatives across Bihar and India.</p>
+          <a href="https://drive.google.com/drive/folders/17ZaLwU8IyzxcMkx7y3SniUJE59PMccm3?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="press-drive-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4.65 20.5l3.46-6h11.77l-3.46 6H4.65zm1.04-1h9.27l2.46-4H8.15l-2.46 4zM12 3.5l5.77 10H6.23L12 3.5zm0 2.31L8.15 12.5h7.7L12 5.81zM1.88 14.5L5.34 8.5h2l-3.46 6h-2zm19.24 0h-2l-3.46-6h2l3.46 6z"/>
+            </svg>
+            View on Google Drive
+          </a>
+          <span class="press-attribution">— A Work of PESTEL Foundation</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="press-card reveal">
+        <div class="press-card-header">
+          <div class="press-card-icon">🗞️</div>
+          <div>
+            <div class="press-card-tag">Media Coverage</div>
+            <div class="press-card-title">News Coverage &amp; Media Features</div>
+          </div>
+        </div>
+        <div class="press-card-body">
+          <p class="press-card-desc">Clippings, features, and coverage of PESTEL Foundation's work as published in newspapers, digital media, and other outlets across the region.</p>
+          <a href="https://drive.google.com/drive/folders/17ZaLwU8IyzxcMkx7y3SniUJE59PMccm3?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="press-drive-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4.65 20.5l3.46-6h11.77l-3.46 6H4.65zm1.04-1h9.27l2.46-4H8.15l-2.46 4zM12 3.5l5.77 10H6.23L12 3.5zm0 2.31L8.15 12.5h7.7L12 5.81zM1.88 14.5L5.34 8.5h2l-3.46 6h-2zm19.24 0h-2l-3.46-6h2l3.46 6z"/>
+            </svg>
+            View on Google Drive
+          </a>
+          <span class="press-attribution">— A Work of PESTEL Foundation</span>
+        </div>
+      </div>
+
+    </div><!-- /press-grid -->
+  </div>
+</section>
+
 <!-- ══════════════════ FOOTER ════════════════════════════ -->
 <footer class="footer" role="contentinfo">
   <div class="container">
@@ -1564,6 +1768,7 @@
           <a href="#about">About Us</a>
           <a href="#mission">Mission &amp; Vision</a>
           <a href="#leadership">Leadership</a>
+          <a href="#press">Press &amp; News</a>
           <a href="#gallery">Gallery</a>
         </nav>
       </div>
@@ -1587,6 +1792,11 @@
           <a href="/cdn-cgi/l/email-protection#e292879196878e848d978c8683968b8d8c9690979196a2858f838b8ecc818d8f"><span class="__cf_email__" data-cfemail="7202170106171e141d071c1613061b1d1c060007010632151f131b1e5c111d1f">[email&#160;protected]</span></a>
           <a href="#contact">Contact Form</a>
           <a href="#donate">Donate</a>
+          <a href="https://drive.google.com/drive/folders/17ZaLwU8IyzxcMkx7y3SniUJE59PMccm3?usp=sharing" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:var(--saffron-light);font-weight:600;font-size:0.82rem;transition:color .2s;" onmouseover="this.style.color='#FFD580'" onmouseout="this.style.color=''">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M4.65 20.5l3.46-6h11.77l-3.46 6H4.65zm1.04-1h9.27l2.46-4H8.15l-2.46 4zM12 3.5l5.77 10H6.23L12 3.5zm0 2.31L8.15 12.5h7.7L12 5.81zM1.88 14.5L5.34 8.5h2l-3.46 6h-2zm19.24 0h-2l-3.46-6h2l3.46 6z"/></svg>
+            Our Work on Google Drive
+          </a>
+          <span style="color:rgba(255,255,255,0.28);font-size:0.72rem;font-style:italic;">— A Work of PESTEL Foundation</span>
           <span style="color:rgba(255,255,255,0.35);font-size:0.78rem;">Registered: Indian Trusts Act, 1882</span>
           <span style="color:rgba(255,255,255,0.35);font-size:0.78rem;">NITI Aayog | MSME Registered</span>
         </div>
